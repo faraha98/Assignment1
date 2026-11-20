@@ -1,7 +1,5 @@
-    
-    
- // Student 1: [Name], [ID]
-// Student 2: [Name], [ID]
+//Farah Alhwajrh : 215348178
+
 import java.util.Random;
 public class Horse implements Runnable {
     private String name;

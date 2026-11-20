@@ -1,6 +1,4 @@
-// Names and IDs of submitters:
-// Student 1: [Name], [ID]
-// Student 2: [Name], [ID]
+//Farah Alhwajrh : 216348178
 
 public class FinishingLine {
     private int place = 0;

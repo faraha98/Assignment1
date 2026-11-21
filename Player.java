@@ -1,6 +1,5 @@
 // Farah Alhwagrh : 215348178
-// Student 2: [Name], [ID]
-
+//Toqa Abu Amar : 215611385
 
 import java.util.Arrays;
 public class Player extends Character {

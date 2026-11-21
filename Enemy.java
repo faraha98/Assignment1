@@ -1,8 +1,8 @@
 // Farah Alhwagrh : 215348178
-
+// Toqa Abu Amar : 215611385
 
 public class Enemy extends Character {
-    private int damage; // 1 to 5
+    private int damage;
 
     public Enemy(String name, int health, int level, int damage) {
         super(name, health, level);
@@ -14,11 +14,14 @@ public class Enemy extends Character {
             this.damage = damage;
         }
     }
+
     public int getDamage() {
         return damage;
     }
+
     @Override
     public String toString() {
-        return super.toString() + "\nDamage: " + damage;
+        return super.toString() + "\n" +
+               "Damage: " + damage;
     }
 }

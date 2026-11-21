@@ -1,46 +1,56 @@
-            
 // Farah Alhwagrh : 215348178
-// Student 2: [Name], [ID]
+// Toqa Abu Amar : 215611385
+
 public class Game {
 
-            public static void simulateBattle(Player player, Enemy enemy) {
-        System.out.println(player.getName() + " - level : " + player.getLevel() + " VS " + enemy.getName() + " - level : " + enemy.getLevel());
-        if (player.getLevel() > enemy.getLevel()) {
-            System.out.println(player.getName() + " wins!");
+    public static void simulateBattle(Player player, Enemy enemy) {
+        if (player == null || enemy == null) {
+            return;
+        }
+
+        int playerLevel = player.getLevel();
+        int enemyLevel = enemy.getLevel();
+
+        System.out.println(player.getName() + " - level: " + playerLevel +
+                       " VS " + enemy.getName() + " - level: " + enemyLevel);
+
+        if (playerLevel > enemyLevel) {
             player.levelUp();
-        } else if (enemy.getLevel() > player.getLevel()) {  
-            
-          
-            System.out.println(enemy.getName() + " wins!");
+            System.out.println(player.getName() + " wins!");
+        } else if (enemyLevel > playerLevel) {
             enemy.levelUp();
+            System.out.println(enemy.getName() + " wins!");
         } else {
-            System.out.println("It's a tie!");
+            System.out.println("It's a draw!");
         }
     }
-    public static void main(String[] args) {
 
-        Item item1 = new Item("Grimoire", 15, true);
-        Item item2 = new Item("Ice Sword", 25, true);
-        Item item3 = new Item("Guardian Shield", 10, false);
-        Item item4 = new Item("Wand of Winds", 30, true);
+    public static void main(String[] args) {
+        Item grimoire = new Item("Grimoire", 15, true);
+        Item iceSword = new Item("Ice Sword", 25, true);
+        Item shield = new Item("Guardian Shield", 10, false);
 
         Player player1 = new Player("Elara the Enchanter", 10, 4);
-        player1.addItem(item1);
-        player1.addItem(item2);
-        Player player2 = new Player("Kael the Windcaller", 10, 0);
-        player2.addItem(item3);
-        player2.addItem(item4);
+        player1.addItem(grimoire);
+        player1.addItem(iceSword);
+
+        Player player2 = new Player("Kael the Windcaller", 10, 2);
+        player2.addItem(shield);
 
         Enemy goblin = new Enemy("Goblin", 10, 2, 3);
 
-        Player[] playersList = {player1, player2};
-        Enemy[] enemiesList = {goblin};
-        GameWorld world = new GameWorld("Crystalpath", playersList, enemiesList, 2);
+        Player[] players = { player1, player2 };
+        Enemy[] enemies = { goblin };
+        GameWorld world = new GameWorld("Crystalpath", players, enemies, 2);
+
+        System.out.println(world);
+        System.out.println();
 
         world.printAllPlayers();
         System.out.println();
-        for (Player p : playersList) {
-            System.out.println("Total inventory value of " + p.getName() + ": " + p.calculateInventoryValue());
+
+        for (Player p : players) {
+            System.out.println(p.getName() + " - Inventory Value: " + p.calculateInventoryValue());
         }
         System.out.println();
 

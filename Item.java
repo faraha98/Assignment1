@@ -1,8 +1,7 @@
-    // Farah Alhwagrh : 215348178
-
+// Farah Alhwagrh : 215348178
+//Toqa abu amar: 215611385
     
-   public class Item { 
-
+   public class Item {
     private String name;
     private int value;
     private boolean isMagical;
@@ -14,9 +13,13 @@
     }
 
     public Item(String name, int value, boolean isMagical) {
-        this.name = name;
+        this.name = (name != null) ? name : "Unknown";
         setValue(value);
         this.isMagical = isMagical;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getValue() {
@@ -35,15 +38,11 @@
         return isMagical;
     }
 
-    public String getName() {
-        return name;
-    }
     @Override
     public String toString() {
-        String res = "Name: " + name + "\nValue: " + value;
-        if (isMagical) {
-            res += "\nMagical item";
-        }
-        return res;
+        String magicStatus = isMagical ? "Magical item" : "Not a magical item";
+        return "Name: " + name + "\n" +
+               "Value: " + value + "\n" +
+               magicStatus;
     }
 }

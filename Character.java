@@ -1,11 +1,10 @@
 // Farah Alhwagrh : 215348178
-// Student 2: [Name], [ID]
-
+// Toqa Abu Amar : 215611385
 
 public class Character {
     private String name;
-    private int health; // 0 to 10
-    private int level;  // 0 to 5
+    private int health;
+    private int level;
 
     public Character() {
         this.name = "Unknown";
@@ -14,7 +13,7 @@ public class Character {
     }
 
     public Character(String name, int health, int level) {
-        this.name = name;
+        this.name = (name != null) ? name : "Unknown";
 
         if (health < 0) {
             this.health = 0;
@@ -32,22 +31,25 @@ public class Character {
             this.level = level;
         }
     }
+
     public String getName() {
         return name;
     }
+
     public int getHealth() {
         return health;
     }
+
     public int getLevel() {
         return level;
     }
-    // Increases level by 1 up to maximum 5
+
     public void levelUp() {
         if (this.level < 5) {
             this.level++;
         }
     }
-    // Increases health by amount up to maximum 10
+
     public void heal(int amount) {
         if (amount > 0) {
             this.health += amount;
@@ -56,8 +58,11 @@ public class Character {
             }
         }
     }
+
     @Override
     public String toString() {
-        return "Name: " + name + "\nHealth: " + health + "\nLevel: " + level;
+        return "Name: " + name + "\n" +
+               "Health: " + health + "\n" +
+               "Level: " + level;
     }
 }

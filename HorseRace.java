@@ -1,7 +1,6 @@
 //Faraha Alhwagrh : 215348178
+// Toqa Abu Amar : 215611385
 
-// Student 2: [Name], [ID]
-import java.util.Scanner;
 public class HorseRace {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

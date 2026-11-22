@@ -1,4 +1,5 @@
 //Farah Alhwajrh : 215348178
+// Toqa Abu Amar : 215611385
 
 import java.util.Random;
 public class Horse implements Runnable {

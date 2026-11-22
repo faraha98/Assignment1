@@ -1,4 +1,8 @@
-   import java.io.BufferedReader;
+// Farah Alhwagrh : 215348178
+//Toqa Abu Amar : 215611385
+
+
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
